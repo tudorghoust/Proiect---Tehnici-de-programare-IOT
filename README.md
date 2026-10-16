@@ -1,6 +1,7 @@
 # Smart Campus Energy Monitoring
 Mini-aplicație IoT – Simularea monitorizării inteligente a consumului de energie într-o clădire publică
 Membri echipă: Codreanu Tudor, Vinț Alexandru
+
 Repository GitHub: https://github.com/tudorghoust/Proiect---Tehnici-de-programare-IOT/tree/main
 
 Scenariu: Smart Building / Smart Energy
