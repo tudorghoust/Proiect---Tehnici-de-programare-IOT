@@ -391,3 +391,30 @@ LLM-ul nu inventează măsurători, spune explicit când nu are date, iar cheile
 Ambii membri participă la arhitectură, integrare, testare, documentare și la analiza pentru întrebarea de cercetare. Contribuțiile sunt vizibile prin commit-uri și pull request-uri.
 
 ---
+## 12. Structura preliminară a repository-ului
+
+```
+smart-campus-energy/
+├── README.md
+├── simulator/
+│   ├── sensor_simulator.py
+│   ├── schedules.yaml        # orar de ocupare pe încăpere
+│   └── scenarios.yaml        # scenarii de risipă injectate
+├── edge/
+│   └── floor_gateway.py
+├── backend/
+│   ├── api/
+│   ├── database/
+│   └── services/             # cost, reguli, rapoarte
+├── frontend/
+│   └── src/
+├── datasets/
+├── docs/
+│   ├── architecture.png
+│   └── dashboard-sketch.png
+├── tests/
+└── docker-compose.yml
+```
+
+---
+
