@@ -380,3 +380,14 @@ LLM-ul nu inventează măsurători, spune explicit când nu are date, iar cheile
 | Sprint 5 (opțional) | Comparație fără/cu sistem, LLM | Răspuns la întrebarea de cercetare + funcții avansate |
 
 ---
+
+## 11. Repartizarea responsabilităților
+
+| Membru | Responsabilități principale |
+| --- | --- |
+| Codreanu Tudor | Simulator senzori, gateway edge, MQTT, reguli de anomalii pe edge, Docker |
+| Vinț Alexandru | Backend FastAPI, baza de date, calcul cost/risipă, frontend și dashboard |
+
+Ambii membri participă la arhitectură, integrare, testare, documentare și la analiza pentru întrebarea de cercetare. Contribuțiile sunt vizibile prin commit-uri și pull request-uri.
+
+---
