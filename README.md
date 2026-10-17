@@ -367,3 +367,16 @@ Exemplu: *„În weekend au fost 2 alerte. Laboratorul B102 a consumat 31 kWh î
 LLM-ul nu inventează măsurători, spune explicit când nu are date, iar cheile API rămân pe backend.
 
 ---
+
+## 10. Etape de implementare (sprinturi)
+
+| Sprint | Activități principale | Livrabil |
+| --- | --- | --- |
+| Sprint 0 | Scenariu, arhitectură, README, repository | Propunerea proiectului |
+| Sprint 1 | Simulator cu orar de ocupare pentru 3 încăperi | Flux de date simulate |
+| Sprint 2 | Gateway de etaj, MQTT, backend și stocare | Pipeline funcțional |
+| Sprint 3 | Dashboard, grafice, calcul cost | Interfață demonstrabilă |
+| Sprint 4 | Reguli de anomalii, alerte, raport risipă, testare | MVP complet |
+| Sprint 5 (opțional) | Comparație fără/cu sistem, LLM | Răspuns la întrebarea de cercetare + funcții avansate |
+
+---
