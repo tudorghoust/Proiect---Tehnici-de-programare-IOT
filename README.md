@@ -351,3 +351,19 @@ Se compară: consumul total, ponderea consumului în afara programului, energia 
 | `/api/config/price` | POST | Setează prețul/kWh și programul clădirii |
 | `/api/simulator/config` | POST | Configurează simulatorul și injectarea scenariilor de risipă |
 | `/api/ask` | POST | Întrebări în limbaj natural (opțional) |
+
+## 9. Integrare LLM – extensie de excelență
+
+Flux:
+
+1. Frontend-ul trimite întrebarea către backend.
+2. Backend-ul identifică intervalul și încăperile relevante și interoghează baza de date.
+3. Rezultatele (consum, alerte, costuri) sunt trimise LLM-ului ca context.
+4. LLM-ul formulează răspunsul.
+5. Frontend-ul afișează răspunsul împreună cu datele folosite.
+
+Exemplu: *„În weekend au fost 2 alerte. Laboratorul B102 a consumat 31 kWh în afara programului, aproximativ 40 lei, din cauza PC-urilor rămase pornite.”* (valori ilustrative)
+
+LLM-ul nu inventează măsurători, spune explicit când nu are date, iar cheile API rămân pe backend.
+
+---
