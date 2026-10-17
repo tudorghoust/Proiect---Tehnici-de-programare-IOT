@@ -1,27 +1,45 @@
-# Smart Campus Energy Monitoring
-Mini-aplicație IoT – Simularea monitorizării inteligente a consumului de energie într-o clădire publică
-Membri echipă: Codreanu Tudor, Vinț Alexandru
+# ⚡ Smart Campus Energy Monitoring
 
-Repository GitHub: https://github.com/tudorghoust/Proiect---Tehnici-de-programare-IOT/tree/main
+### Mini-aplicație IoT – Simularea monitorizării inteligente a consumului de energie într-o clădire publică
 
-Scenariu: Smart Building / Smart Energy
-Status: Propunere / Studiu preliminar
-1. Descrierea scenariului
-   
-Proiectul urmărește simularea unui sistem IoT pentru monitorizarea consumului de energie electrică și termică dintr-o clădire publică (campus universitar). Clădirea are mai multe etaje și săli de curs.
-Sistemul colectează date simulate de la senzori: consum electric pe etaj, prezență în săli, stare iluminat, temperatură interioară și senzori de fereastră deschisă/închisă. Datele sunt transmise către un gateway/edge la nivel de etaj, apoi către un serviciu cloud, unde sunt stocate, analizate și prezentate utilizatorului (administratorul clădirii) printr-o interfață web.
-Aplicația trebuie să permită identificarea și semnalarea unor anomalii care indică risipă de energie, de exemplu:
-- iluminat sau încălzire pornite în săli fără prezență;
-- consum ridicat în afara programului (noaptea, în weekend);
-- fereastră deschisă cu încălzirea pornită;
-- creștere bruscă a consumului pe un etaj față de media istorică.
-Pe baza datelor, sistemul estimează energia risipită și costul aferent, oferind un raport periodic cu economiile posibile.
+**Membri echipă:** Codreanu Tudor, Vinț Alexandru  
+**Repository GitHub:** `https://github.com/tudorghoust/Proiect---Tehnici-de-programare-IOT`  
+**Scenariu:** Smart Building / Smart Energy  
+**Status:** Propunere / Studiu preliminar  
 
-Întrebarea principală: Cum poate un sistem IoT să identifice automat consumul inutil de energie într-o clădire publică, utilizând date provenite de la senzori de consum și prezență?
+---
 
-Întrebarea de cercetare (non-tehnică): Ce pondere din consumul de energie al unei clădiri universitare este cauzată de comportamentul utilizatorilor (echipamente și iluminat lăsate pornite, ferestre deschise cu încălzirea pornită) și cât din acest consum poate fi eliminat doar prin monitorizare și alertare, fără investiții în renovare?
+## 1. Descrierea scenariului
 
-Ipoteză de lucru: în spațiile cu utilizare intermitentă (săli de curs, laboratoare), consumul în afara orelor de ocupare reprezintă o parte semnificativă din total, iar alertarea în timp real poate reduce acest consum cu cel puțin jumătate.
+Proiectul urmărește simularea unui sistem IoT pentru monitorizarea consumului de energie electrică și termică dintr-o clădire publică (campus universitar).
+
+Sistemul colectează date simulate de la senzori (consum electric, prezență, stare iluminat, temperatură interioară, fereastră deschisă/închisă), le transmite către un **gateway/edge la nivel de etaj**, apoi către un serviciu cloud, unde sunt stocate, analizate și prezentate administratorului clădirii printr-o interfață web.
+
+Aplicația trebuie să permită **identificarea și semnalarea anomaliilor care indică risipă de energie**:
+
+* iluminat sau încălzire pornite în săli fără prezență;
+* consum ridicat în afara programului (noaptea, în weekend);
+* fereastră deschisă cu încălzirea pornită;
+* creștere bruscă a consumului pe un etaj față de media istorică.
+
+Pe baza datelor, sistemul estimează **energia risipită și costul aferent** (lei) și generează un raport periodic cu economiile posibile.
+
+### Contextul problemei
+
+* La nivelul UE, clădirile sunt responsabile pentru aproximativ **40% din consumul de energie** și **36% din emisiile de gaze cu efect de seră**, iar circa **75% din fondul construit este ineficient energetic** (Comisia Europeană).
+* În România, după liberalizarea completă a pieței (1 iulie 2025), prețul energiei pentru consumatorii **non-casnici** (firme, instituții publice) se situează între aproximativ **1,26 și 2 lei/kWh**, în funcție de furnizor. Pentru o instituție publică, orice kWh risipit are deci un cost direct și semnificativ.
+* Renovarea clădirilor este scumpă și lentă. O parte importantă a risipei vine însă din **comportament** (lumini, calculatoare, aer condiționat lăsate pornite) și poate fi redusă fără investiții mari, doar prin vizibilitate și alertare.
+
+---
+
+**Întrebarea principală (tehnică):** *Cum poate un sistem IoT să identifice automat consumul inutil de energie într-o clădire publică, utilizând date provenite de la senzori de consum și prezență?*
+
+**Întrebarea de cercetare (non-tehnică):** *Ce pondere din consumul de energie al unei clădiri universitare este cauzată de comportamentul utilizatorilor (echipamente și iluminat lăsate pornite, ferestre deschise cu încălzirea pornită) și cât din acest consum poate fi eliminat doar prin monitorizare și alertare, fără investiții în renovare?*
+
+**Ipoteză de lucru:** în spațiile cu utilizare intermitentă (săli de curs, laboratoare), consumul în afara orelor de ocupare reprezintă o parte semnificativă din total, iar alertarea în timp real poate reduce acest consum cu cel puțin jumătate.
+
+---
+
 ## 2. Scenariul concret – Etajul 1, Corpul B
 
 Pentru MVP se simulează **un singur etaj cu 3 încăperi**, cu profiluri de utilizare diferite:
@@ -55,3 +73,281 @@ Pentru MVP se simulează **un singur etaj cu 3 încăperi**, cu profiluri de uti
 6. **Luni dimineață** – raportul săptămânal arată: *„Energie risipită: 112 kWh ≈ 146 lei. Sursa principală: B102, PC-uri lăsate pornite.”*
 
 ---
+
+## 3. Obiectivele proiectului
+
+### Obiective obligatorii (MVP)
+
+- [ ] Simularea senzorilor pentru 3 încăperi (consum, prezență, iluminat, temperatură, fereastră)
+- [ ] Transmiterea periodică a datelor către un gateway de etaj
+- [ ] Prelucrare simplă la nivel edge (validare, agregare pe etaj)
+- [ ] Transmiterea și stocarea datelor în backend
+- [ ] Interfață web pentru vizualizarea consumului pe încăpere și pe etaj
+- [ ] Detecția a minimum 2 tipuri de anomalii de risipă
+- [ ] Afișarea alertelor și a istoricului acestora
+- [ ] Calculul energiei risipite și al costului în lei
+
+### Obiective opționale
+
+- [ ] Utilizarea unui dataset public cu date reale
+- [ ] Compararea a două metode de detecție (reguli vs. statistic)
+- [ ] Raport săptămânal automat (energie risipită, cost, încăperea cu cele mai multe probleme)
+- [ ] Simularea unei acțiuni automate (stingerea luminilor după 15 minute fără prezență)
+- [ ] Simularea comparativă „fără alerte” vs. „cu alerte” pentru răspunsul la întrebarea de cercetare
+
+### Obiectiv AI / LLM
+
+Asistent conversațional pentru administratorul clădirii. Exemple:
+
+- „Cât a consumat etajul 1 săptămâna trecută și cât a costat?”
+- „Care încăpere a risipit cea mai multă energie luna aceasta?”
+- „Au existat alerte în weekend?”
+- „Cât am economisi lunar dacă PC-urile din laborator ar fi oprite peste noapte?”
+
+*Răspunsurile trebuie să fie fundamentate pe datele aplicației, nu pe cunoștințele generale ale modelului.*
+
+---
+
+## 4. Arhitectura propusă
+
+**Simulator senzori → Edge/Gateway (etaj) → Cloud/Backend → Frontend**
+
+| Componentă | Responsabilitate |
+| --- | --- |
+| Sensor Simulator | Generează date pentru fiecare încăpere după un program de ocupare, inclusiv scenarii de risipă |
+| Edge/Gateway (etaj) | Primește datele, le validează, agregă consumul pe etaj și aplică regulile simple (prezență vs. iluminat) |
+| Cloud/Backend | Expune API-uri, stochează măsurătorile, calculează costurile, gestionează alertele |
+| Frontend | Dashboard cu consum curent, grafice, alerte și raport de economii |
+| LLM (opțional) | Răspunde la întrebări în limbaj natural pe baza datelor stocate |
+
+```text
+[B101: meter, PIR, light, temp, window] ─┐
+[B102: meter, PIR, light, temp, window] ─┼──► [Edge Gateway – Etaj 1]
+[B103: meter, PIR, light, temp, window] ─┘          │
+                                                    │ MQTT
+                                                    ▼
+                                             [Cloud Backend]
+                                             ├── REST API
+                                             ├── Database
+                                             ├── Cost Calculator
+                                             └── Anomaly Events
+                                                    │
+                                                    ▼
+                                             [Web Dashboard]
+                                             ├── Consum pe încăpere/etaj
+                                             ├── Alerte
+                                             └── Raport economii
+
+                       [LLM Assistant – opțional] ── Backend API / DB
+```
+
+**Topicuri MQTT propuse:**
+
+```text
+campus/corpB/etaj1/B101/telemetry
+campus/corpB/etaj1/B102/telemetry
+campus/corpB/etaj1/B103/telemetry
+campus/corpB/etaj1/aggregate
+campus/corpB/etaj1/alerts
+```
+
+*Nu sunt necesare dispozitive hardware reale. Toate componentele rulează local sau în containere Docker.*
+
+---
+
+## 5. Datele și simularea senzorilor
+
+### Senzori propuși (în fiecare încăpere)
+
+| Senzor | Mărime măsurată | Unitate | Interval normal | Frecvență |
+| --- | --- | --- | --- | --- |
+| **Contor electric** | Tensiune (U) | V | 207–253 (230 ±10%) | 10 s |
+| **Contor electric** | Intensitate curent (I) | A | 0–30 | 10 s |
+| **Contor electric** | Putere activă (P) | W | 0–7000 | 10 s |
+| **Contor electric** | Factor de putere (cos φ) | – | 0,85–1 | 10 s |
+| **Contor electric** | Energie consumată (E) | kWh | crescătoare | 10 s |
+| **Senzor prezență (PIR)** | Prezență | 0/1 | 0 = gol, 1 = ocupat | 10 s |
+| **Senzor lumină** | Iluminare | lx | < 50 stins, 300–500 aprins | 30 s |
+| **Senzor temperatură** | Temperatură | °C | 20–24 | 30 s |
+| **Contact fereastră** | Stare fereastră | 0/1 | 0 = închisă, 1 = deschisă | la schimbare |
+
+Starea încălzirii/AC (ON/OFF) este citită de la echipament.
+
+**Formule folosite:** `P = U × I × cos φ` · `E = P × t` · `Cost = E × preț/kWh`
+
+*Exemplu: 230 V × 4,2 A × 0,95 ≈ 918 W.*
+
+### Exemplu de mesaj transmis
+
+```json
+{
+  "device_id": "corpB-etaj1-B102",
+  "room_type": "laborator",
+  "timestamp": "2026-11-12T22:15:00Z",
+  "voltage_v": 230.4,
+  "current_a": 4.18,
+  "active_power_w": 914.9,
+  "power_factor": 0.95,
+  "energy_kwh": 1532.87,
+  "occupancy": 0,
+  "illuminance_lx": 12,
+  "temperature_c": 21.6,
+  "window_open": 0,
+  "hvac_on": false
+}
+```
+
+*Aici: ora 22:15, 0 persoane, luminile stinse (12 lx), dar contorul arată 4,18 A / ~915 W → PC-uri lăsate pornite.*
+
+### Generarea datelor
+
+Simulator Python care:
+
+1. Folosește un **orar de ocupare** pe încăpere (ex. curs B101 luni 08–14, laborator B102 zilnic 10–18).
+2. Calculează consumul din echipamentele pornite + zgomot aleator.
+3. Simulează temperatura în funcție de încălzire, fereastră și temperatura exterioară.
+4. Injectează controlat **scenarii de risipă** (lumini uitate, PC-uri pornite, fereastră deschisă) și le **etichetează** pentru evaluare.
+5. Publică datele către gateway prin MQTT.
+
+### Dataset-uri externe (opțional)
+
+| Dataset | Ce conține | Utilizare în proiect | Licență |
+| --- | --- | --- | --- |
+| **UCI Occupancy Detection** | ~20.560 înregistrări: temperatură, umiditate, lumină | Profiluri de prezență | CC BY 4.0 |
+| **UCI Room Occupancy** | Cameră, 4 zile, temperatură, lumină, sunet, PIR | Număr de persoane | CC BY 4.0 |
+| **Building Data Genome 2** | 3.053 contoare, date orare din clădiri non-rezidențiale | Curbe reale de consum | Open data |
+
+---
+
+## 6. Identificarea anomaliilor
+
+### Regulile inițiale
+
+```text
+R1 – LIGHTS_ON_EMPTY_ROOM
+IF illuminance_lx > 150 AND occupancy = 0
+FOR 15 minutes
+THEN alert (WARNING)
+
+R2 – WINDOW_OPEN_HEATING_ON
+IF window_open = 1 AND hvac_on = true
+FOR 10 minutes
+THEN alert (WARNING)
+
+R3 – OUT_OF_HOURS_CONSUMPTION
+IF time NOT IN program (L–V 08:00–20:00)
+AND active_power_w > baseline_standby(room) × 1.5
+FOR 30 minutes
+THEN alert (CRITICAL)
+
+R4 – FLOOR_CONSUMPTION_SPIKE
+IF floor_active_power_w > mean(same hour-of-week, last 4 weeks) + 3σ
+THEN alert (WARNING)
+
+R5 – VOLTAGE_OUT_OF_RANGE
+IF voltage_v < 207 OR voltage_v > 253      (230 V ± 10%)
+FOR 3 consecutive readings
+THEN alert (CRITICAL)
+
+R6 – OVERCURRENT
+IF current_a > 0.9 × rated_current(room circuit)   (ex. 0.9 × 16 A)
+FOR 3 consecutive readings
+THEN alert (CRITICAL)
+
+R7 – SENSOR_OFFLINE / IMPOSSIBLE_VALUE
+IF no message FOR 2 minutes
+OR power_factor > 1 OR current_a < 0 OR active_power_w > voltage_v × current_a
+THEN alert (INFO)
+```
+
+R1, R2, R5, R6 și R7 rulează pe **edge** (decizie locală, rapidă). R3 și R4 rulează în **cloud** (au nevoie de istoric).
+
+R1–R4 detectează **risipa** (obiectivul principal). R5–R7 detectează **probleme electrice și de senzori** (siguranță și calitatea datelor).
+
+### Calculul risipei
+
+Pentru fiecare alertă se calculează:
+
+```text
+energie_risipită (kWh) = Σ (active_power_w − baseline_standby_w) × Δt_ore / 1000
+cost (lei) = energie_risipită × preț_kWh
+```
+
+Prețul implicit: **1,30 lei/kWh** (configurabil, în intervalul ofertelor pentru non-casnici).
+
+### Evaluarea detecției
+
+- numărul de anomalii detectate față de cele injectate;
+- alarme false (ex. sală goală, dar lumina aprinsă pentru curățenie);
+- Precision / Recall pe baza etichetelor din simulator;
+- latența dintre producerea anomaliei și afișarea alertei.
+
+### Răspunsul la întrebarea de cercetare
+
+Se rulează simulatorul pe **4 săptămâni** în două variante:
+
+1. **Fără sistem** – risipa comportamentală apare cu frecvența din scenariu.
+2. **Cu sistem** – la fiecare alertă, cu o probabilitate configurabilă (ex. 70%), utilizatorul/administratorul reacționează în X minute.
+
+Se compară: consumul total, ponderea consumului în afara programului, energia și costul economisite.
+
+---
+
+## 7. Interfața frontend – schiță preliminară
+
+```text
++---------------------------------------------------------------+
+|          SMART CAMPUS ENERGY – Corp B, Etaj 1                 |
++---------------------------------------------------------------+
+| Putere etaj: 4.82 kW | Azi: 38.4 kWh | Cost azi: 49.9 lei     |
++---------------------------------------------------------------+
+|  B101 Sală curs    |  B102 Laborator   |  B103 Secretariat    |
+|  229.8 V | 1.9 A   |  230.4 V | 4.18 A |  231.0 V | 9.1 A    |
+|  0 pers. | 💡 ON   |  0 pers. | 915 W  |  1 pers. | 🪟 OPEN  |
+|  ⚠ GOL + LUMINI    |  ⚠ ÎN AFARA ORAR. |  ⚠ GEAM + ÎNCĂLZIRE  |
++---------------------------------------------------------------+
+|  Consum etaj – ultimele 24h       [ LINE CHART ]              |
+|  (zonă gri = în afara programului)                            |
++---------------------------------------------------------------+
+| Alerte recente                                                |
+| 22:15  B102  OUT_OF_HOURS_CONSUMPTION   CRITICAL   ~1.2 lei/h |
+| 16:10  B103  WINDOW_OPEN_HEATING_ON     WARNING               |
+| 14:45  B101  LIGHTS_ON_EMPTY_ROOM       WARNING               |
++---------------------------------------------------------------+
+| Raport săptămână: 112 kWh risipiți ≈ 146 lei | Top: B102      |
++---------------------------------------------------------------+
+| Întreabă clădirea (opțional)                                  |
+| [ Cât am risipit în weekend?                         ] [Send] |
++---------------------------------------------------------------+
+```
+
+**Implementare propusă:** React + Recharts.
+
+---
+
+## 8. Tehnologii și API-uri
+
+| Componentă | Tehnologie propusă |
+| --- | --- |
+| Sensor Simulator | Python |
+| Edge/Gateway | Python (paho-mqtt) |
+| Comunicare IoT | MQTT |
+| Broker MQTT | Mosquitto |
+| Backend API | FastAPI |
+| Database | SQLite (MVP) / PostgreSQL + TimescaleDB (opțional) |
+| Frontend | React + Recharts |
+| Deployment | Docker Compose |
+| LLM (opțional) | API LLM sau model local |
+
+### API-uri propuse
+
+| Endpoint | Metodă | Descriere |
+| --- | --- | --- |
+| `/api/rooms` | GET | Lista încăperilor și starea curentă |
+| `/api/rooms/{id}/measurements` | GET | Istoricul măsurătorilor pentru o încăpere |
+| `/api/floor/consumption` | GET | Consumul agregat al etajului pe interval |
+| `/api/alerts` | GET | Alertele detectate (filtrabile după încăpere/tip) |
+| `/api/reports/waste` | GET | Energie risipită și cost pe perioadă |
+| `/api/config/price` | POST | Setează prețul/kWh și programul clădirii |
+| `/api/simulator/config` | POST | Configurează simulatorul și injectarea scenariilor de risipă |
+| `/api/ask` | POST | Întrebări în limbaj natural (opțional) |
