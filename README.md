@@ -434,3 +434,15 @@ Scenariul end-to-end demonstrat:
 **Varianta de excelență:** comparația „fără/cu sistem” care răspunde la întrebarea de cercetare și răspunsuri LLM bazate pe date.
 
 ---
+
+## 14. Riscuri și limitări
+
+- Datele simulate nu reproduc exact comportamentul real al utilizatorilor.
+- Pragurile fixe pot genera alarme false (ex. personal de curățenie seara).
+- Senzorul PIR nu detectează persoanele nemișcate → risc de alertă falsă.
+- Prețul energiei variază după furnizor și contract; costul calculat este o estimare.
+- Rezultatul întrebării de cercetare depinde de parametrii scenariului și trebuie prezentat ca simulare, nu ca măsurătoare reală.
+
+**Strategie:** prioritizarea MVP-ului; funcțiile opționale se adaugă doar după validarea fluxului end-to-end.
+
+---
