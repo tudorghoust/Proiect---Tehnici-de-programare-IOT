@@ -446,3 +446,27 @@ Scenariul end-to-end demonstrat:
 **Strategie:** prioritizarea MVP-ului; funcțiile opționale se adaugă doar după validarea fluxului end-to-end.
 
 ---
+
+
+## 15. Referințe și resurse
+
+- Comisia Europeană – *In focus: Energy efficiency in buildings*: https://commission.europa.eu/news/focus-energy-efficiency-buildings-2020-02-17_en
+- Economedia – prețul energiei pentru consumatorii non-casnici după liberalizare: https://economedia.ro/?p=271300
+- UCI Occupancy Detection Dataset: https://archive.ics.uci.edu/dataset/357/occupancy+detection
+- UCI Room Occupancy Estimation Dataset: https://archive.ics.uci.edu/dataset/864/room+occupancy+estimation
+- Building Data Genome Project 2: https://github.com/buds-lab/building-data-genome-project-2 (articol: Miller et al., *Scientific Data* 7, 368, 2020)
+- Documentație: Mosquitto, paho-mqtt, FastAPI, React, Recharts
+
+---
+
+## 16. Întrebări deschise
+
+- Ce reguli rulează pe edge și ce reguli în cloud?
+- Cum stabilim consumul de bază (standby) pentru fiecare încăpere?
+- Cât timp păstrăm datele brute față de cele agregate?
+- Cum reducem alarmele false cauzate de PIR?
+- Ce parametri de reacție a utilizatorilor folosim în simularea „cu sistem”?
+
+---
+
+**Notă:** Acest README constituie propunerea inițială a proiectului și va fi actualizat pe măsură ce arhitectura și funcționalitățile sunt validate.
