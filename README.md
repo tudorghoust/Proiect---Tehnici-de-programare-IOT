@@ -418,3 +418,19 @@ smart-campus-energy/
 
 ---
 
+## 13. Testare și criterii de succes
+
+Scenariul end-to-end demonstrat:
+
+1. Simulatorul generează date normale pentru B101–B103.
+2. Datele trec prin gateway-ul de etaj și ajung în backend.
+3. Dashboard-ul afișează consumul pe încăpere și pe etaj.
+4. Simulatorul injectează „sala goală cu luminile aprinse” în B101.
+5. Sistemul generează alerta, cu ora, cauza și costul estimat.
+6. Raportul arată energia risipită și costul total pe perioada simulată.
+
+**Criteriu minim de succes:** flux demonstrabil senzor simulat → edge → backend → frontend, cu detectarea și afișarea a cel puțin 2 tipuri de risipă și calculul costului.
+
+**Varianta de excelență:** comparația „fără/cu sistem” care răspunde la întrebarea de cercetare și răspunsuri LLM bazate pe date.
+
+---
